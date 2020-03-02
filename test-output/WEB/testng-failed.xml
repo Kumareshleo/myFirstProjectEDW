@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [WEB]" parallel="tests">
+  <parameter name="maxWaitTimeToFindElement" value="100"/>
+  <parameter name="maxWaitTimeToPOLLElement" value="4"/>
+  <parameter name="url" value="http://leaftaps.com/opentaps/control/main"/>
+  <listeners>
+    <listener class-name="edw.edw.frameLib.TestListener"/>
+  </listeners>
+  <test thread-count="2" name="StagingforIE(failed)" parallel="classes">
+    <parameter name="deviceType" value="mobile"/>
+    <parameter name="operatingSystemType" value="64bit"/>
+    <parameter name="browser" value="GoogleChrome"/>
+    <classes>
+      <class name="edw.edw.login.LoginTest">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="drop"/>
+          <include name="logintest"/>
+          <include name="Database"/>
+          <include name="Initialize"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- edw.edw.login.LoginTest -->
+    </classes>
+  </test> <!-- StagingforIE(failed) -->
+</suite> <!-- Failed suite [WEB] -->

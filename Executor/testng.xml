@@ -1,0 +1,86 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="WEB" verbose="1" parallel="tests" thread-count="2">
+
+	<!--Implicit Wait (works with manage method) Use maxWaitTimeToPOLLElement 
+		judiciously as this parameter will give an adverse effect on script execution 
+		time -->
+	<parameter name="maxWaitTimeToPOLLElement" value="4" />
+
+	<!-- Explicit wait (Works with ExpectedConditions)Encourage use of "maxWaitTimeToFindElement" 
+		as this will not reduce the entire on script execution time, rather it will 
+		wait for the specified time to identify a element -->
+
+	<parameter name="maxWaitTimeToFindElement" value="100"></parameter>
+
+	<!-- Here you can change the url for application,keep one as uncommented 
+		only -->
+	<parameter name="url"
+		value= "http://leaftaps.com/opentaps/control/main" />
+		<!-- value="https://everydaywell.dex.staginghealtheintent.com/pages/home" /> -->
+	<!-- <parameter name="url" value="https://everydaywell.dex.staginghealtheintent.com/pages/home"/> -->
+
+	<listeners>
+		<!-- <listener class-name="edw.edw.frameLib.CustomReport" /> -->
+		<listener class-name="edw.edw.frameLib.TestListener" />
+		<!-- <listener class-name="edw.edw.frameLib.ExtentListener" /> -->
+	</listeners>
+
+	
+	<test name="StagingforIE" parallel="classes" thread-count="1">
+		<parameter name="operatingSystemType" value="64bit" />
+		<!--<parameter name="operatingSystemType" value="32bit"/> -->
+
+		<!-- <parameter name="deviceType" value="desktop" /> -->
+		<parameter name="deviceType" value="mobile"/>
+		<parameter name="browser" value="GoogleChrome"/>
+		<!--<parameter name="browser" value="firefox" /> -->
+		 <!-- <parameter name="browser" value="IE" /> -->
+		<!--<parameter name="browser" value="opera"/> -->
+		<!--<parameter name="browser" value="browserStack" /> <parameter name="BstackBrowser" 
+			value="Chrome" /> <parameter name="BstackBrowserVersion" value="63.0" /> 
+			<parameter name="BstackOperatingSystem" value="Windows" /> <parameter name="BstackOperatingSystemVersion" 
+			value="10" /> -->
+		<classes>
+		<class name="edw.edw.login.LoginTest" />
+			<!-- <class name="edw.edw.pagelets.ProfileOverviewTest"/> -->
+			<!-- <class name="edw.edw.pagelets.AccountPreferenceTest" /> -->
+			<!--<class name="edw.edw.virtualCare.EvisitTest"/> -->
+			<!--<class name="edw.edw.pagelets.FindDoctorTest" /> <class name="edw.edw.pagelets.FindFacilityTest"/> -->
+			<!--<class name="edw.edw.pagelets.ScheduleNowTest"/> -->
+			<!--<class name="edw.edw.pagelets.PayBillTest"/> -->
+			<!--<class name="edw.edw.pagelets.PayFamilyBillTest"/> -->
+			<!--<class name="edw.edw.pagelets.DeductibleTrackerTest"/> -->
+			<!--<class name="edw.edw.insurance.InsuranceTest"/> -->
+		</classes>
+	</test>
+	
+	<test name="Staging" parallel="classes" thread-count="1">
+		<parameter name="operatingSystemType" value="64bit" />
+		<!--<parameter name="operatingSystemType" value="32bit"/> -->
+
+		<!-- <parameter name="deviceType" value="desktop" /> -->
+		<!-- <parameter name="deviceType" value="mobile"/> -->
+		<!-- <parameter name="browser" value="GoogleChrome"/> --> 
+		<!--<parameter name="browser" value="firefox" /> -->
+		<!-- <parameter name="browser" value="IE" />-->
+		<!--<parameter name="browser" value="opera"/> -->
+		<!--<parameter name="browser" value="browserStack" /> <parameter name="BstackBrowser" 
+			value="Chrome" /> <parameter name="BstackBrowserVersion" value="63.0" /> 
+			<parameter name="BstackOperatingSystem" value="Windows" /> <parameter name="BstackOperatingSystemVersion" 
+			value="10" /> -->
+		<classes>
+			<!-- <class name="edw.edw.login.LoginTest" /> -->
+			<!-- <class name="edw.edw.pagelets.ProfileOverviewTest"/> -->
+			<!-- <class name="edw.edw.pagelets.AccountPreferenceTest" /> -->
+			<!--<class name="edw.edw.virtualCare.EvisitTest"/> -->
+			<!--<class name="edw.edw.pagelets.FindDoctorTest" /> <class name="edw.edw.pagelets.FindFacilityTest"/> -->
+			<!--<class name="edw.edw.pagelets.ScheduleNowTest"/> -->
+			<!--<class name="edw.edw.pagelets.PayBillTest"/> -->
+			<!--<class name="edw.edw.pagelets.PayFamilyBillTest"/> -->
+			<!--<class name="edw.edw.pagelets.DeductibleTrackerTest"/> -->
+			<!--<class name="edw.edw.insurance.InsuranceTest"/> -->
+		</classes>
+	</test>
+	
+
+</suite>

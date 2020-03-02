@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [WEB]" parallel="tests">
+  <parameter name="maxWaitTimeToFindElement" value="150"/>
+  <parameter name="maxWaitTimeToPOLLElement" value="100"/>
+  <parameter name="url" value="https://everydaywell.dex.staginghealtheintent.com/pages/home"/>
+  <listeners>
+    <listener class-name="edw.edw.frameLib.CustomReport"/>
+    <listener class-name="edw.edw.frameLib.TestListener"/>
+    <listener class-name="edw.edw.frameLib.ExtentListener"/>
+  </listeners>
+  <test thread-count="2" name="Stagingforchrome(failed)" parallel="classes">
+    <parameter name="deviceType" value="desktop"/>
+    <parameter name="operatingSystemType" value="64bit"/>
+    <parameter name="browser" value="IE"/>
+    <classes>
+      <class name="edw.edw.pagelets.AccountPreferenceTest">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="drop"/>
+          <include name="accountPreferenceTest"/>
+          <include name="Database"/>
+          <include name="Initialize"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- edw.edw.pagelets.AccountPreferenceTest -->
+    </classes>
+  </test> <!-- Stagingforchrome(failed) -->
+  <test thread-count="2" name="Staging(failed)" parallel="classes">
+    <parameter name="deviceType" value="desktop"/>
+    <parameter name="operatingSystemType" value="64bit"/>
+    <parameter name="browser" value="GoogleChrome"/>
+    <classes>
+      <class name="edw.edw.pagelets.AccountPreferenceTest">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="drop"/>
+          <include name="accountPreferenceTest"/>
+          <include name="Database"/>
+          <include name="Initialize"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- edw.edw.pagelets.AccountPreferenceTest -->
+    </classes>
+  </test> <!-- Staging(failed) -->
+</suite> <!-- Failed suite [WEB] -->
